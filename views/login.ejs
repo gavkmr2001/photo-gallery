@@ -1,0 +1,23 @@
+<!-- we dont need to go one folder back here ... -->
+  <%- include("./partials/header") %>
+
+
+<h1>
+login form
+</h1>
+
+<form action="/login" method="POST">
+	<input type="text" name="username" placeholder="username">
+	<input type="password" name="password" placeholder="password">
+<!-- we can use butt0n or input -->
+	<input type="submit" value="Login!"> 
+</form>
+
+<li><a href="/register">Sign up</a></li>
+
+<li><a href="/login">login</a></li>
+
+<li><a href="/logout">logout</a></li>
+
+<!-- .. represents one folder back -->
+  <%- include("./partials/footer") %>

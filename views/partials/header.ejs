@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelpcamp</title>
+		<link rel= "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		
+		<link rel= "stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Yelpcamp</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				
+				<ul class=" navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home</a>
+					</li>
+				</ul>
+				<ul class=" navbar-nav navbar-right">
+					<% if(!currentUser){ %>
+					<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="/register" class="nav-link">signup</a></li>
+				 	<% } else{ %>
+					<li><a href="#">Signed in as <%= currentUser.username %></a></li>
+					<li class="nav-item"><a href="/logout" class="nav-link" >logout</a></li>
+					<% } %>
+				</ul>
+	
+			</div>
+		</div>
+	</nav>
+		
+<div class="container">
+	<!-- because even if error is empty the code can run so used length>0 also -->
+	<% if(error && error.length>0){ %>
+		<div class="alert alert-danger" role="alert">
+			<%= error %> 
+		</div>
+	<% } %>
+	<% if(success && success.length>0){ %>
+	<div class="alert alert-success" role="alert">
+		<%= success %> 
+	</div>
+	<% } %>
+</div>
+		
+
+
+
+		

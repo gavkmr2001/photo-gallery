@@ -1,0 +1,15 @@
+.card {
+	padding: 0;
+}
+
+body{
+	background: pink;
+}
+
+.delete-form{
+	display: inline;
+}
+
+#name{
+	color: pink;
+}
