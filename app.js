@@ -67,13 +67,13 @@ app.use(function(req,res ,next){
 });
 
 app.use("/",indexRoutes);
+app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 //appends /campgrounds in front of all the campgroundRoutes
-app.use("/campgrounds",campgroundRoutes);
 
 
 
-app.listen(process.env.PORT ||3000, process.env.IP, function(){
+app.listen(process.env.PORT , process.env.IP, function(){
 	console.log("the yelpcamp server has started");
 })
 
