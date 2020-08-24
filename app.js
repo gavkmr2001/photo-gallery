@@ -25,9 +25,11 @@ var commentRoutes   = require("./routes/comments"),
 
 // console.log(process.env.DATABASEURL);
 
+// in case heroku url fails use local one
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v13deployed"
 //this is our local url ...we have used a conifg variable on heroku ..
 // mongoose.connect('mongodb://localhost/yelp_camp_v13deployed', {
-mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
