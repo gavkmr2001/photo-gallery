@@ -23,19 +23,27 @@ var commentRoutes   = require("./routes/comments"),
 		campgroundRoutes= require("./routes/campgrounds"),
 		indexRoutes      = require("./routes/index");
 
+// console.log(process.env.DATABASEURL);
+
+//this is our local url ...we have used a conifg variable on heroku ..
 // mongoose.connect('mongodb://localhost/yelp_camp_v13deployed', {
+mongoose.connect(process.env.DATABASEURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('Connected to DB!'))
+.catch(error => console.log(error.message));
+
+
+//this url got from mongolab
+// mongoose.connect('mongodb+srv://gavkmr2001:Gaurav@94310@cluster0.3mlbg.mongodb.net/yelp_camp?retryWrites=true&w=majority', {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
 // })
 // .then(() => console.log('Connected to DB!'))
 // .catch(error => console.log(error.message));
 
-mongoose.connect('mongodb+srv://gavkmr2001:Gaurav@94310@cluster0.3mlbg.mongodb.net/yelp_camp?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('Connected to DB!'))
-.catch(error => console.log(error.message));
+
 
 app.use(bodyparser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
