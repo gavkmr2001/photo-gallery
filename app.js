@@ -26,10 +26,10 @@ var commentRoutes   = require("./routes/comments"),
 // console.log(process.env.DATABASEURL);
 
 // in case heroku url fails use local one
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v13deployed"
+// var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v13deployed"
 //this is our local url ...we have used a conifg variable on heroku ..
-// mongoose.connect('mongodb://localhost/yelp_camp_v13deployed', {
-mongoose.connect(url, {
+mongoose.connect('mongodb://localhost/yelp_camp_vdurga', {
+// mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -54,6 +54,9 @@ app.use(express.static(__dirname + "/public"));
 // _method is conventional
 app.use(methodOverride("_method"));
 app.use(flash());
+//require moment---for time of comment
+app.locals.moment= require("moment");
+
 // seedDB();
 
 //PASSPORT CONFIGURATION
@@ -92,4 +95,9 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 app.listen(process.env.PORT || 3000 , process.env.IP, function(){
 	console.log("the yelpcamp server has started");
 })
+
+
+//editing feature in user profile
+			//circular image
+
 

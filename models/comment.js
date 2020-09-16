@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 //SCHEMA SETUP
 var commentSchema= new mongoose.Schema({
 	text: String,
+	createdAt: { type: Date, default: Date.now },
 	// used in campgrounds>> show.ejs
 	author: {
 		id: {

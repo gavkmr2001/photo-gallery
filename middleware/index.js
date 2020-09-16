@@ -12,7 +12,7 @@ var Comment= require("../models/comment");
 				res.redirect("back");
 			} else{
 				//does user own the campground? ---checking if both are equal
-				if(foundCampground.author.id.equals(req.user._id)){
+				if(foundCampground.author.id.equals(req.user._id)|| req.user.isAdmin){
 					next();
 				} else{
 					//send the user back to where they came from
@@ -39,7 +39,7 @@ middlewareObj.checkCommentOwnership= function(req, res, next){
 				//does user own the comment? ---checking if both are equal
 				// console.log(req.user._id);
 				// console.log(foundComment.author.id);
-				if(foundComment.author.id.equals(req.user._id)){
+				if(foundComment.author.id.equals(req.user._id) || req.user.isAdmin){
 					next();
 				} else{
 					req.flash("error", "permission denied");

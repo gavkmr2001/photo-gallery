@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+
+
+<header class="jumbotron">
+	<div class="container text-center">
+		<h1>User Profile </h1>
+	</div>
+</header>
+
+
+
+<div class="row">
+	<div class="col-md-4">	
+		<div class="card">
+			<img src="<%= user.avatar%>" alt="user profile image" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title"><%= user.firstName +" " + user.lastName %></h5>
+				<p class="card-text">
+					A computer hacker is a computer expert who uses their technical 	knowledge to overcome a problem. While "hacker" can refer to any skilled computer programmer, 
+		
+		the term has become associated in popular culture with a "security hacker", someone who, with their technical knowledge, uses bugs or exploits to break into computer systems.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-8">	
+		<h3>
+			<%= user.username %>'s UPLOADS
+		</h3>
+		<ul>
+			<% campgrounds.forEach(function(campground){ %>
+				<li>
+					<a href="/campgrounds/<%= campground.id%>"><%= campground.name %></a>
+				</li>
+			<% }); %>
+		</ul>
+	</div>
+	
+</div>
+		
+
+<%- include("../partials/footer") %>
+
