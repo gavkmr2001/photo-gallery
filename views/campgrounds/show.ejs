@@ -1,18 +1,9 @@
 <%- include("../partials/header") %>
 
 
-<!-- =========================sidebar=============== -->
-<!-- <div class="container"> -->
-	<div class="row">
-		<div class="col-md-3">
-		
-		</div>
-		
-	<!-- ===================================================== -->
-		
-		
-	<!-- =========================campground====================== -->
-		<div class="col-md-9">
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-10">
 			<div class="card mb-4">
 				<img src="<%= campground.image %>" class="card-img-top" alt="<%= campground.name %>">
 				<div class="card-body">
@@ -38,7 +29,7 @@
 				</div>
 			</div>
 	<!-- ===============comment==================== -->
-			<div class="card">			
+			<div class="card mb-4">			
 				<div class="card-body">
 					<div class="float-right">
 						<a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New comment</a>

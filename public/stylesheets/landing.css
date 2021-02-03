@@ -1,102 +1,55 @@
 body{
-	background-color: #000;
+	background-color: #203647;
+	
 }
 
 /* https://github.com/nax3t/background-slider */
 #landing-header {
+	background: #12232E;
 	
-	/* coming forward and backwards */
-  z-index: 1;
-	/* for using z-index we need to put position other than static */
-  position: relative;
   text-align: center;
 	/* vh-- view height */
-  padding-top: 40vh;
+  /* padding-top: 40vh; */
 }
 
 #landing-header h1 {
+	font-size: 5vw;
+	padding-top: 5vw;
+	padding-bottom: 2vw;
 	font-weight: bold;
   color: #fff;
 }
 
 
-.slideshow { 
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-	/* ensures that the backgroundimages are below our main text */
-  z-index: 0;
-	/* removes the bullet poiints */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-	
-}
-
-.slideshow li { 
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: cover;
-	/* center the images perfectly */
-  /* background-position: 50% 50%; */
-	/* background-position: center; */
-  background-repeat: no-repeat;
-  opacity: 0;
-	padding: 20px 20px;
-	/* ensures that the backgroundimages are below our main text */
-  z-index: 0;
-	/* fade in and out */
-  animation: imageAnimation 50s linear infinite; 
+#landing-header a {
+	font-size: 2vw;
+	/* padding-top: 4vh; */
+	font-weight: bold;
+  /* color: #fff; */
 }
 
 
-.slideshow li:nth-child(1) { 
-  background-image: url(https://i.pinimg.com/originals/6f/a6/64/6fa6641151d25259c09b5fb578fd481a.jpg) 
-}
-.slideshow li:nth-child(2) { 
-	background-image: url(https://2.bp.blogspot.com/-1F0GWVFj1u8/UHz2oh4bmZI/AAAAAAAAFgI/Qb4UkKIvEVg/s1600/durga-pooja-Desktop-Wallpapers.jpg);
-  animation-delay: 10s; 
-}
-.slideshow li:nth-child(3) { 
-  background-image: url(https://wallpapercave.com/wp/wp5478376.jpg);
-  animation-delay: 20s; 
-}
-.slideshow li:nth-child(4) { 
-  background-image: url(https://2.bp.blogspot.com/-1F0GWVFj1u8/UHz2oh4bmZI/AAAAAAAAFgI/Qb4UkKIvEVg/s1600/durga-pooja-Desktop-Wallpapers.jpg);
-  animation-delay: 30s; 
-}
-.slideshow li:nth-child(5) { 
-  background-image: url(https://i.pinimg.com/originals/6f/a6/64/6fa6641151d25259c09b5fb578fd481a.jpg) 
-  animation-delay: 40s; 
-}
-
-/* imageAnimation matches with the animation in the .slideshow defined earlier */
-@keyframes imageAnimation { 
-  0% { 
-    opacity: 0; 
-    animation-timing-function: ease-in;
-  }
-  10% {
-    opacity: 1;
-    animation-timing-function: ease-out;
-  }
-  20% {
-    opacity: 1
-  }
-  30% {
-    opacity: 0
-  }
+img {
+	 width: 100%;
+  height: auto;
 }
 
 
-/* Older browser support - .no-cssanimations class added by modernizr */
-.no-cssanimations .slideshow li {
-	opacity: 1;
+.footer {
+	font-size: 2em;
+	height: 70px;
+}
+
+.nav{
+	font-size: 2em;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav :hover{
+	color: #5CB85C;
 }
 
 

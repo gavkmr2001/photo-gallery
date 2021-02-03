@@ -1,3 +1,11 @@
+.card {
+	padding: 0;
+	background-color: #e5eaf5;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+
+
 /* .card {
 	padding: 0;
 }
@@ -17,9 +25,10 @@ body{
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 480px;
+  /* padding: 15px; */
   margin: 0 auto;
+	font-size: 2vh;
 }
 
 .form-signin .form-control {
@@ -53,6 +62,19 @@ body{
 }
 
 
+
+.nav{
+	font-size: 2em;
+}
+
+.nav-link {
+	color: white;
+}
+
+.nav :hover{
+	color: #5CB85C;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -62,7 +84,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-
+	background-color: #a8dadc;
 }
 .footer {
   position: absolute;
@@ -70,7 +92,10 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+	font-size: 2em;
   background-color: #f5f5f5;
+	line-height: 1;
+	
 }
 
 .container .text-muted {
@@ -99,4 +124,12 @@ body {
 /* Campground show page delete button */
 .delete-form {
 	display: inline-block;
+}
+
+
+/* =================== */
+
+.container{
+		max-width: 1600px;
+
 }

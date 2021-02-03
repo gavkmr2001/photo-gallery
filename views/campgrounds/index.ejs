@@ -1,36 +1,128 @@
 <!-- .. represents one folder back -->
-<%- include("../partials/header") %>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Make site responsive on mobile/tablet -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>PHOTO GALLERY</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<!-- //fifainsta.html online links donot work...why???--> 
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+			
+			<!-- fontawesome---------------- -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- ------------ -->
+		
+		
+      <link rel="stylesheet" href="/stylesheets/index.css">
+			
+  </head>
+  <body>
+		
+	
+<!-- =========================================		 -->
 
-<!-- <div class="container"> -->
-	<header class="jumbotron">
+		<nav class="navbar navbar-expand-md navbar-light mb-4 " style="background-color:#455e89;">
+	  	<!-- <a class="navbar-brand" href="/" style="color: black;">P.G</a> -->
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
+		
+				<ul class="nav ">
+          <li class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+            <a href="/campgrounds" class="nav-link">Home</a>
+          </li>
+        </ul>
+		    <ul class="nav" >
+		      <li class="nav-item">
+		        <a class="nav-link" href="aboutme.html">About me</a>
+		      </li>
+		     
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://www.facebook.com/gauravronaldo77"><i class="fa fa-facebook"></i></a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://twitter.com/Gavkmr"><i class="fa fa-twitter"></i></a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://www.instagram.com/invites/contact/?i=21leuyu8vi3&utm_content=5qphmts"><i class="fa fa-instagram"></i></a>
+		      </li> 
+		    </ul>
+				 <ul class="nav ">
+            <% if(!currentUser){ %>
+								<!-- This is an example of ternary operators. -->
+								
+                <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                  <a href="/login" class="nav-link"><i class="fas fa-user"></i> Login</a>
+                </li>
+                <li class="nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>">
+                  <a href="/register" class="nav-link"><i class="fas fa-sign-in-alt"></i> Sign Up</a>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Signed In As <%= currentUser.username %></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/logout" class="nav-link">Logout</a>
+                </li>
+								
+            <% } %>
+        </ul>
+				
+		  </div>
+	  
+	</nav>
+
+		
+		
+		
+		
+    
+    <div class="container">
+       <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger" role="alert"><%=error %></div>
+       <% } %>
+       
+       <% if(success && success.length > 0) { %>
+         <div class="alert alert-success" role="alert"><%= success %></div>
+       <% } %>
+    </div>
+    <div class="container">
+
+<!--===========================================  -->
+<div class="container">
+	<header class="jumbotron ">
 		<div class="container">
-			<h1>Durga Puja Celebration Gallery</h1>
-		<p>Here everyone can share their photos related to Durga Puja Celebration.</p>
+			<h1 style="font-size: 5vh; ">PHOTO GALLERY</h1>
+		<h3>Share your awesome collection of photos with everyone.</h3>
 		<p>
-			<a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Picture</a>
+			<a class="btn btn-success btn-lg" href="/campgrounds/new">Add New Picture</a>
 		</p>
 		</div>
 	</header>
 
 	<div class="row text-center" id="campground-grid">
 		<% campgrounds.forEach(function(campground){ %>
-			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">				
-				<div class="card" >
-  				<img src="<%= campground.image %>" class="card-img-top" alt="<%= campground.name %>">
-  				<div class="card-body">
-    				<h5 class="card-title"><%= campground.name %></h5>
-    				<p class="card-text">
-							<a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More info</a>
-						</p>
- 					</div>
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-4">				
+				<div class="card contt" >			
+  				<img src="<%= campground.image %>" class="card-img-top responsive image" alt="<%= campground.name %>" style="object-fit: cover; height: 300px;">
+					<div class="card-header text"><%= campground.name %></div>
+					<div class="overlay">
+						<a href="/campgrounds/<%= campground._id %>" class="btn btn-primary text">More info</a>
+					</div>
 				</div>				
 			</div>
 		<% }); %>
 		
 	</div>
 	
-<!-- </div> -->
+</div>
 
 <%- include("../partials/footer") %> 
 

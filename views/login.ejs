@@ -5,15 +5,15 @@
 	<div class="col-md-12">
 		<form class="form-signin" action="/login" method="POST">
       <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-      <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
+      <h1 class="h3 mb-4 text-center" style="font-weight: 600;">Please Log in</h1>
       <label for="inputUsername" class="sr-only">Username</label>
       <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <input style="margin-bottom: 10px" type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+      <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Log in</button>
     </form>
 		<div class="form-signin">
-			<a href="/campgrounds">Go Back</a>
+			<a class="btn btn-danger" href="/campgrounds">Go Back</a>
 		</div>
 	</div>
 </div>

@@ -2,9 +2,17 @@
 <html>
     <head>
         <title>YelpCamp</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+			
+			
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
         <link rel="stylesheet" href="/stylesheets/landing.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+			
+			<!-- fontawesome---------------- -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- ------------ -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script> -->
     </head>
     <body>
     
@@ -20,21 +28,76 @@
             </div>
         <% } %>
     </div>
+			
+			
+			
+			
+		<nav class="navbar navbar-expand-sm navbar-light " style="background-color: #203647; ">
+	  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
+		    <ul class="nav" >
+		      <li class="nav-item">
+		        <a class="nav-link" href="aboutme.html">About me</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" target="_blank" href="#">Contact</a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://www.facebook.com/gauravronaldo77"><i class="fa fa-facebook"></i></a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://twitter.com/Gavkmr"><i class="fa fa-twitter"></i></a>
+		      </li>
+		      <li class="nav-item">
+		      	<a class="nav-link" target="_blank" href="https://www.instagram.com/invites/contact/?i=21leuyu8vi3&utm_content=5qphmts"><i class="fa fa-instagram"></i></a>
+		      </li> 
+		    </ul>
+		  </div>
+	  
+	</nav>
+
+
+    <div id="landing-header" class="my-5">
+			<div class="row">
+				<div class="col-md-6 order-md-1">
+					<img src="https://images.pexels.com/photos/191429/pexels-photo-191429.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+				</div>
+				<div class="col-md-6 order-md-0">
+					<h1 class="align-content-center">Welcome to the Photo Gallery</h1>
+					<a href="/campgrounds" class="btn btn-lg btn-success mb-4">View All Images</a>
+				</div>
+				
+			</div>
+
+			
+		</div>
     
-    <div id="landing-header">
- 		<h1>Welcome to Durga Puja Celebration Gallery</h1>
-		<a href="/campgrounds" class="btn btn-lg btn-success">View All Images</a>
-    </div>
-    
-    <ul class="slideshow">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div class="container-fluid row my-5">
+			<div class="col-md-4 my-3">
+				<div class="card" >
+  				<img class="card-img-top responsive" src="https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+				</div>
+			</div>
+			<div class="col-md-4 my-3">
+				<div class="card">
+  				<img class="card-img-top responsive" src="https://images.pexels.com/photos/296649/pexels-photo-296649.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+				</div>
+			</div>
+			<div class="col-md-4 my-3">
+				<div class="card">
+  				<img class="card-img-top responsive" src="https://images.pexels.com/photos/2559741/pexels-photo-2559741.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Card image cap">
+				</div>
+			</div>
+			
+		
+	
 
 <%- include("partials/footer") %>
+			
+			
 			
 			
 			
