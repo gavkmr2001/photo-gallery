@@ -40,6 +40,16 @@ img {
 	height: 70px;
 }
 
+.text-muted {
+	font-size: 1.5em;
+	/* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
 .nav{
 	font-size: 2em;
 }

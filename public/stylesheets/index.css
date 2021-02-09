@@ -11,9 +11,9 @@ img {
 }
 
 
-.footer {
+/* .footer {
 	font-size: 2em;
-}
+} */
 
 .nav{
 	font-size: 2em;
@@ -92,14 +92,26 @@ body {
 	background-color: #a8dadc;
 
 }
-.footer {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+  /* height: 60px;
+  background-color: #f5f5f5; */
+/* } */ 
+
+/* we rempved footer class and r using text-muted instead */
+.text-muted {
+	font-size: 1.5em;
+	position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ 
+  text-align: center;
 }
+
 
 .container .text-muted {
   margin: 20px 0;
