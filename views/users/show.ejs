@@ -3,38 +3,58 @@
 
 <header class="jumbotron">
 	<div class="container text-center">
-		<h1>User Profile </h1>
+		<h1><%= user.firstName %>'s Profile </h1>
 	</div>
 </header>
 
 
 
 <div class="row">
-	<div class="col-md-4">	
+	<div class="col-md-4 my-4">	
 		<div class="card">
 			<img src="<%= user.avatar%>" alt="user profile image" class="card-img-top">
 			<div class="card-body">
-				<h5 class="card-title"><%= user.firstName +" " + user.lastName %></h5>
-				<p class="card-text">
-					A computer hacker is a computer expert who uses their technical 	knowledge to overcome a problem. While "hacker" can refer to any skilled computer programmer, 
-		
-		the term has become associated in popular culture with a "security hacker", someone who, with their technical knowledge, uses bugs or exploits to break into computer systems.
-				</p>
+				<h2 class="card-title ">Intro</h2>
+				<div class="card-text">
+					<h4>Name: <%= user.firstName + " "+ user.lastName %> </h4>
+					<h4>Username: <%= user.username %></h4>
+					<h4>Email: <%= user.email %></h4>
+					<button class="btn btn-primary">
+						Edit Profile
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="col-md-8">	
-		<h3>
-			<%= user.username %>'s UPLOADS
-		</h3>
-		<ul>
-			<% campgrounds.forEach(function(campground){ %>
-				<li>
-					<a href="/campgrounds/<%= campground.id%>"><%= campground.name %></a>
-				</li>
-			<% }); %>
-		</ul>
+	<div class="col-md-8 my-4">	
+		
+		<div class="card">
+			
+			<div class="card-body">
+				<h2 class="card-title text-center "><%= user.username %>'s UPLOADS</h2>
+				<div class="card-text">
+					<div class="row text-center" id="campground-grid">
+						<% campgrounds.forEach(function(campground){ %>
+							<div class="col-lg-4 col-md-6 col-sm-12 mb-4">				
+								<div class="card my-3" >	
+									<div class="card-title "><h3>
+										<%= campground.name %>
+										</h3></div>
+									<img src="<%= campground.image %>" class="card-img-top responsive " alt="<%= campground.name %>" style="object-fit: cover; height: 300px;">
+									
+									<div class="card-body">
+										<a href="/campgrounds/<%= campground._id %>" class="btn btn-success ">More info</a>
+									</div>
+								</div>
+							</div>
+						<% }); %>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
 	</div>
 	
 </div>
